@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState, setData } from 'react';
 
 async function fetchBasic() {
-  const response = await fetch("http://localhost:3001/checking");
+  try{
+  const response = await fetch("http://localhost:3001/FacultyMember");
   return response.json();
+  }catch(error){
+    console.log(error);
+    return null;
+  }
 }
 function App() {
   const [data, setData] = useState("");
 
   useEffect(async () => {
     const response = await fetchBasic();
-    setData(response);
+    if(response != null){
+      setData(response);
+    }else{
+      setData({check: "checking2"});
+    }
     console.log(response);
   }, []);
 
   return (
-  <div>
-    <h1>{data.check}</h1>
-  </div>
+    <div>
+      <h1>{data.check} HELLO</h1>
+    </div>
+
   );
 }
 

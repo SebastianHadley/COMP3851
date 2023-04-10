@@ -24,3 +24,4 @@ class FacultyMember{
         this.Education = Education;
     }
 }
+module.exports = {FacultyMember,FacultyGroup};

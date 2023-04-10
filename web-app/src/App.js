@@ -7,6 +7,15 @@ import {FirstDay} from "./components/FirstDay";
 import { FacultyInfo } from './components/FacultyInfo';
 import { Footer } from './components/Footer';
 import {Testimonial} from "./components/Testimonial"
+async function fetchBasic() {
+  try{
+  const response = await fetch("http://localhost:3001/FacultyMember");
+  return response.json();
+  }catch(error){
+    console.log(error);
+    return null;
+  }
+}
 function App() {
   return (
     <div className="App">

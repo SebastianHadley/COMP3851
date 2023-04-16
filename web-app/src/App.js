@@ -1,27 +1,13 @@
+
 import './App.css';
-import { useEffect, useState, setData } from 'react';
-
-async function fetchBasic() {
-  try{
-  const response = await fetch("http://localhost:3001/FacultyMember");
-  return response.json();
-  }catch(error){
-    console.log(error);
-    return null;
-  }
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavBar } from "./components/NavBar";
+import {Banner} from "./components/Banner";
+import {FirstDay} from "./components/FirstDay";
+import { FacultyInfo } from './components/FacultyInfo';
+import { Footer } from './components/Footer';
+import {Testimonial} from "./components/Testimonial"
 function App() {
-  const [data, setData] = useState("");
-
-  useEffect(async () => {
-    const response = await fetchBasic();
-    if(response != null){
-      setData(response);
-    }else{
-      setData({check: "checking2"});
-    }
-    console.log(response);
-  }, []);
   return (
     <div className="App">
       <NavBar />

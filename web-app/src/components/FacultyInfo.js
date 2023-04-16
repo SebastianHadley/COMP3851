@@ -15,10 +15,19 @@ import Maha from "../assets/img/Program Convenor/Maha.png";
 import Geo from "../assets/img/Program Convenor/Geo.png";
 import Raymond from "../assets/img/Program Convenor/Raymond.png";
 import noname  from "../assets/img/Program Convenor/noname.png";
+import { useEffect, useState, setData } from 'react';
 
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-
+async function fetchBasic() {
+  try{
+  const response = await fetch("http://localhost:3001/FacultyMember");
+  return response.json();
+  }catch(error){
+    console.log(error);
+    return null;
+  }
+}
 export const FacultyInfo = () => {
 
   const Head = [
@@ -111,7 +120,7 @@ export const FacultyInfo = () => {
     },
   ];
 
-  
+  const response =  fetchBasic();
 
   return (
     <section className="project" id="project">

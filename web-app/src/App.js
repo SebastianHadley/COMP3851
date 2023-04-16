@@ -8,6 +8,8 @@ import { FacultyInfo } from './components/FacultyInfo';
 import { Footer } from './components/Footer';
 import {Testimonial} from "./components/Testimonial"
 function App() {
+  console.log("Rendering App component"); // add console log here
+
   return (
     <div className="App">
       <NavBar />

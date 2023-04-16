@@ -1,127 +1,51 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { FacultyStaff } from "./FacultyStaff";
-import David from "../assets/img/Head/David.png";
-import Elena from "../assets/img/Head/Elena.png";
-import Jeff from "../assets/img/Head/Jeff.png";
-import Marc from "../assets/img/Head/Marc.png";
-import Pablo from "../assets/img/Head/Pablo.png";
-import Thomas from "../assets/img/Head/Thomas.png";
-import Vicki from "../assets/img/Head/Vicki.png";
-import Ruk from "../assets/img/Program Convenor/Ruk.png";
-import Xu from "../assets/img/Program Convenor/Xu.png";
-import Nasimul from "../assets/img/Program Convenor/Nasimul.png";
-import Mike from "../assets/img/Program Convenor/Mike.png";
-import Maha from "../assets/img/Program Convenor/Maha.png";
-import Geo from "../assets/img/Program Convenor/Geo.png";
-import Raymond from "../assets/img/Program Convenor/Raymond.png";
-import noname  from "../assets/img/Program Convenor/noname.png";
 import { useEffect, useState, setData } from 'react';
-
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-async function fetchBasic() {
-  try{
-  const response = await fetch("http://localhost:3001/FacultyMember");
-  return response.json();
-  }catch(error){
-    console.log(error);
-    return null;
-  }
-}
+
+// API Response
+// FacultyGroups: An array of faculty group objects
+// - FacultyName: The name of the faculty group
+// - FacultyID: The ID of the faculty group
+// - FacultyMembers: An array of faculty member objects
+//   - FirstName: The first name of the faculty member
+//   - LastName: The last name of the faculty member
+//   - Title: The title of the faculty member
+//   - FacultyMemberID: The ID of the faculty member
+//   - JobRole: The job role of the faculty member
+//   - Email: The email of the faculty member
+//   - ParentFaculty: The ID of the faculty group the member belongs to
+//   - ImageID: The ID of the faculty member's image
+//   - Subject: The subject the faculty member teaches (if applicable)
+
 export const FacultyInfo = () => {
-
-  const Head = [
-    {
-      title: "David Pontin",
-      description: "Head if Discipline, Physics",
-      imgUrl: David,
-    },
-    {
-      title: "Elena Levchenko",
-      description: "Head of Discipline, Mathematics",
-      imgUrl: Elena,
-    },
-    {
-      title: "Jeffrey Hogan",
-      description: "Deputy Head of School",
-      imgUrl: Jeff,
-    },
-    {
-      title: "Marc Adam",
-      description: "Head of Discipline, Commputing and IT",
-      imgUrl: Marc,
-    },
-    {
-      title: "Pablo Moscato",
-      description: "Head of Discipline, Data Science and Statistics",
-      imgUrl: Pablo,
-    },
-    {
-      title: "Thomas Nann",
-      description: "Head of School",
-      imgUrl: Thomas,
-    },
-    {
-      title: "Vicki Gumbleton",
-      description: "School Executive Officer",
-      imgUrl: Vicki,
-    },
-  ];
-  const program = [
-    {
-      title: "Rukshan Athauda",
-      description: "Program Convenor, Software Engineering",
-      imgUrl: Ruk,
-    },
-    {
-      title: "Nasimul Noman",
-      description: "Program Convenor, Computer Science",
-      imgUrl: Nasimul,
-    },
-    {
-      title: "Marc Adam",
-      description: "Head of Discipline, Commputing and IT",
-      imgUrl: Marc,
-    },
-    {
-      title: "Mike Meylan",
-      description: "Program Convenor, Mathematics",
-      imgUrl: Mike,
-    },
-    {
-      title: "Pablo Moscato",
-      description: "Program Convenor, Master Data Science",
-      imgUrl: Pablo,
-    },
-    {
-      title: "Raymond Chiong",
-      description: "Program Convenor, Grad Cert IInformation Technology and Master Information Technology",
-      imgUrl: Raymond,
-    },
-    {
-      title: "Geoffrey Skinner",
-      description: "Program Convenor, Master Data Science",
-      imgUrl: Geo,
-    },
-    {
-      title: "Mahakim Newton",
-      description: "Program Convenor, Data Science",
-      imgUrl: Maha,
-    },
-    {
-      title: "Kirill Glavatskiy",
-      description: "Program Convenor, Grad Cert Data Analytics",
-      imgUrl: noname,
-    },
-    {
-      title: "Xuhui Fan",
-      description: "Program Convenor, Grad Cert Data Analytics",
-      imgUrl: Xu,
-    },
-  ];
-
-  const response =  fetchBasic();
-
+  const [facultyResponse, setFacultyMembers] = useState([]);
+  useEffect(() => {
+    async function fetchFacultyMembers() {
+      try {
+        const response = await fetch("http://localhost:3001/FacultyMember");
+        const data = await response.json();        
+        setFacultyMembers(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchFacultyMembers();
+  }, []);
+  let Head = [];
+  let program = [];
+  console.log(facultyResponse)
+  console.log("Faculty")
+  facultyResponse.forEach(Faculty => { 
+    console.log("Faculty")
+    console.log(Faculty)
+    console.log("checking")
+    if(Faculty.FacultyName === 'Head Staff'){  Head = Faculty.FacultyMembers}
+    if(Faculty.FacultyName === 'Program Convenors') { program = Faculty.FacultyMembers}
+  })
+  // console.log(Head)
+  // console.log(program)
   return (
     <section className="project" id="project">
       <Container>

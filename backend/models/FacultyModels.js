@@ -1,27 +1,21 @@
-class FacultyGroup{
 
-  constructor(FacultyName, FacultyID,ParentSection,FacultyMembers){
+class FacultyGroup{
+  constructor(FacultyName, FacultyID){
     this.FacultyName = FacultyName;
     this.FacultyID = FacultyID;
-    this.ParentSection = ParentSection;
-    this.FacultyMembers = FacultyMembers;
+    this.FacultyMembers = [];
   };
 
 }
+
 class FacultyMember{
-    constructor(FirstName, LastName,Title,
-    FacultyMemberID,UniRole,ContactInformation,
-    ParentFaculty,ImageID,MemberDescription,Education){
-        this.FirstName = FirstName;
-        this.LastName = LastName;
+    constructor(FirstName, LastName,Title,ContactInformation, JobRole,Subject){
+        this.Name = FirstName + ' ' + LastName;
         this.Title = Title;
-        this.FacultyMemberID = FacultyMemberID;
-        this.UniRole = UniRole;
-        this.ContactInformation = ContactInformation;
-        this.ParentFaculty = ParentFaculty;
-        this.ImageID = ImageID;
-        this.MemberDescription = MemberDescription;
-        this.Education = Education;
+        this.JobDescription = JobRole + (Subject ? ', ' + Subject : '');
+        this.Email = ContactInformation;
+        this.ImageID = FirstName;
     }
 }
+
 module.exports = {FacultyMember,FacultyGroup};

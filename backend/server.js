@@ -15,6 +15,7 @@ app.listen(3001, () => {
 app.get('/FacultyMember', async (req, res) => {
   try {
   const faculties = await getFaculties();
+  console.log(faculties)
   res.json(faculties);
   }
   catch (err) {

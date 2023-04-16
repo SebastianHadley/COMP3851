@@ -37,7 +37,7 @@ export const FirstDay = () => {
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme first-slider">
                             <div className="item">
                             <img src={tour} alt="Image" />
-                                <h5>Attending in the Uni Orientation Week.</h5>
+                                <h5>Attending in the Uni Orientation Week.</h5> 
                             </div>
                             <div className="item">
                             <img src={explore} alt="Image" />

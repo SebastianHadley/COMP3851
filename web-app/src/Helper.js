@@ -1,4 +1,3 @@
-import { FacultyMember } from "./models/FacultyModels";
 
 export function getFacultyImage(ImageID){
     try{
@@ -6,4 +5,8 @@ export function getFacultyImage(ImageID){
     }catch{
         return require("./assets/img/FacultyImages/Blank.png");
     }
+}
+
+export function GetImage(ImageID){
+    return require("./assets/img/"+ImageID+".png");
 }

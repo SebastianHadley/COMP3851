@@ -35,17 +35,11 @@ export const FacultyInfo = () => {
   }, []);
   let Head = [];
   let program = [];
-  console.log(facultyResponse)
-  console.log("Faculty")
   facultyResponse.forEach(Faculty => { 
-    console.log("Faculty")
-    console.log(Faculty)
-    console.log("checking")
     if(Faculty.FacultyName === 'Head Staff'){  Head = Faculty.FacultyMembers}
     if(Faculty.FacultyName === 'Program Convenors') { program = Faculty.FacultyMembers}
   })
-  // console.log(Head)
-  // console.log(program)
+
   return (
     <section className="project" id="project">
       <Container>

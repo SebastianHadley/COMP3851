@@ -3,6 +3,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useEffect, useState, setData } from 'react';
 import { GetImage } from "../Helper";
+
+//Component For The First Day List
 export const FirstDay = () => {
 
   const responsive = {
@@ -24,7 +26,6 @@ export const FirstDay = () => {
     }
   };
 
-
   const [OWeek, setListItems] = useState([]);
   useEffect(() => {
     async function fetchOWeek() {
@@ -38,15 +39,14 @@ export const FirstDay = () => {
     }
     fetchOWeek();
   }, []);
-  console.log(OWeek)
-  console.log(OWeek.Paragraphs)
+
   return (
     <section className="first" id="first">
         <div className="container">
             <div className="row">
                 <div className="col-12">
                     <div className="first-bx wow zoomIn">
-                        <h2>First Day List!</h2>
+                        <h2>{OWeek.SectionTitle}</h2>
                         {OWeek.Paragraphs ? (
                           <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme first-slider">
                             {OWeek.Paragraphs.map((item, index) => (
@@ -66,3 +66,6 @@ export const FirstDay = () => {
     </section>
   )
 }
+
+
+

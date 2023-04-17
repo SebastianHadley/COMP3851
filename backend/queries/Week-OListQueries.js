@@ -7,15 +7,13 @@ module.exports = async function getWeekOList() {
   return new Promise((resolve, reject) => {
     db.serialize(() => {
         // Execute the two queries in parallel
-        const getSection = 'SELECT * FROM Section WHERE SectionTitle = \"Week-O List\"';
+        const getSection = 'SELECT * FROM Section WHERE SectionTitle = \"O-Week List\"';
         let getParagraphs = 'SELECT * FROM Paragraph WHERE ParentSection =';
         let paragraphs = [];
         db.all(getSection, [], (err, rows) => { 
             if(err){
                 reject(err);
             }else{
-                console.log(rows)
-                console.log("checking");
                 const sectionID = rows[0].SectionID;
                 getParagraphs = getParagraphs + sectionID;
                 db.all(getParagraphs,[],(err,paragraphObj) => {

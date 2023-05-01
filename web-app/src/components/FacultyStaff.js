@@ -1,13 +1,13 @@
 import { Col } from "react-bootstrap";
-
-export const FacultyStaff = ({ title, description, imgUrl }) => {
+import {  getFacultyImage } from "../Helper";
+export const FacultyStaff = ({ Name, JobDescription, ImageID}) => {
   return (
     <Col size={12} sm={6} md={4}>
       <div className="proj-imgbx">
-        <img src={imgUrl} />
+        <img src= {getFacultyImage(ImageID)}/>
         <div className="proj-txtx">
-          <h4>{title}</h4>
-          <span>{description}</span>
+          <h4>{Name}</h4>
+          <span>{JobDescription}</span>
         </div>
       </div>
     </Col>

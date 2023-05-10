@@ -1,4 +1,5 @@
 
+import {Link} from 'react-router-dom';
 import pngegg from "../assets/img/pngegg.png";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -41,7 +42,11 @@ export const FirstDay = () => {
                             </div>
                             <div className="item">
                             <img src={explore} alt="Image" />
-                                <h5>Exploring the Campus with Orientation Tour.</h5>
+                                <div>
+                                  <a href="https://www.newcastle.edu.au/our-uni/campuses-and-locations/maps">
+                                    Exploring the Campus.
+                                  </a>
+                                </div>
                             </div>
                             <div className="item">
                             <img src={card} alt="Image" />

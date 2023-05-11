@@ -1,5 +1,5 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import noname  from "../assets/img/Program Convenor/noname.png";
+import noname  from "../assets/img/FacultyImages/Blank.png";
 import { StudentInfo } from "./StudentInfo";
 
 import 'animate.css';

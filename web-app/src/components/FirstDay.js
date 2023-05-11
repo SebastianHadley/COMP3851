@@ -46,6 +46,7 @@ export const FirstDay = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="first-bx wow zoomIn">
+
                         <h2>{OWeek.SectionTitle}</h2>
                         {OWeek.Paragraphs ? (
                           <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme first-slider">

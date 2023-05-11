@@ -31,7 +31,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #9983e9 !important;
+  background-color: #000 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -483,3 +483,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: bold;
   font-size: 40px;
 }
+/****************** Footer Css *************/
+
+.test-left {
+  text-align:left;
+  margin-left: 155px;
+  color: black;
+  text-decoration: solid;
+}
+.test-all{
+  background-color: #000;
+}
+
+/********* FAQ CSS *****************/
+.faq-heading{
+  text-align:center;
+}
+
+.faq-block {
+  width: 100%;
+  padding: 50px 50px 0 50px;
+}
+
+
+
+

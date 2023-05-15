@@ -444,7 +444,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 10px;
-  width:300px;
+  width:3000px;
   align-items: center;
   height:200px;
 }
@@ -482,6 +482,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-decoration: solid;
   font-weight: bold;
   font-size: 40px;
+  
 }
 /****************** Footer Css *************/
 

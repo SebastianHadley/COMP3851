@@ -2,7 +2,7 @@ import {Col, Row } from "react-bootstrap";
 
 export const StudentInfo = ({ title, description, imgUrl }) => {
   return (
-    <Row size={12} sm={6} md={4}>
+    <Row size={12} sm={8} md={4}>
         <div className="test-imgbx">
         <img src={imgUrl} />
         </div>

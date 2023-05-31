@@ -39,7 +39,7 @@ const config = {
 export const FAQ = () => {
 
     return (
-        <div>
+        <div className="faq-block">
             <h1 className="faq-heading">Frequent Ask Question</h1>
             <div>
                 <Faq 

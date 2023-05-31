@@ -308,6 +308,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Projects Css ************/
 .project {
   padding: 60px 0;
+  margin-left:20%;
+  margin-right:20%;
   position: relative;
   background-color: black;
 }
@@ -332,9 +334,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
+
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
+
+
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
@@ -377,19 +382,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 20px;
   border-radius: 55px;
 }
+.proj-faculty-wrap {
+  padding-bottom: 15px;
+}
 
 .proj-imgbx {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .proj-border{
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
 }
+
 .proj-imgbx::before {
   content: "";
   background-color: #9983e9 !important;
@@ -399,9 +414,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 0;
   transition: 0.4s ease-in-out;
 }
+
 .proj-imgbx:hover::before {
   height: 100%;
 }
+.proj-img-content{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 .proj-txtx {
   position: absolute;
   text-align: center;
@@ -422,11 +444,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   line-height: 1.1em;
 }
-.proj-txtx span {
+
+.proj-txtx-span {
+  display: block;
   font-style: italic;
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 0.8px;
+  font-weight: 200;
+  /* letter-spacing: 0.8px; */
 }
 .background-image-right {
   top: 20%;
@@ -453,6 +476,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   background-color: black;
   align-content: center;
+  margin-left: 20%;
+  margin-right:20%;
 }
 .test-center{
   align-items: center;
@@ -497,13 +522,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /********* FAQ CSS *****************/
+
 .faq-heading{
   text-align:center;
 }
 
 .faq-block {
-  width: 100%;
-  padding: 50px 50px 0 50px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 

@@ -65,7 +65,7 @@ export const FacultyInfo = () => {
                         {
                           Head.map((Head, index) => {
                             return (
-                                <FacultyStaff 
+                                <FacultyStaff  className="proj-faculty-wrap"
                                   key={index}
                                   {...Head}
                                   />

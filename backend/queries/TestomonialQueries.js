@@ -13,7 +13,6 @@ module.exports = async function getTestomonials() {
         if (err) {
           reject(err);
         } else {
-          console.log(rows);
           const sectionID = rows[0].SectionID;
           getSubSections = getSubSections + sectionID;
 
@@ -29,7 +28,6 @@ module.exports = async function getTestomonials() {
             });
 
             for (const sub of subObjects) {
-              console.log(sub);
               let paragraphs = [];
               let getParagraphsQuery = `SELECT * FROM Paragraph WHERE ParentSection = ${sub.SectionID}`;
 

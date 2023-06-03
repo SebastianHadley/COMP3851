@@ -6,6 +6,7 @@ const app = express();
 const getFaculties = require("./queries/FacultyQueries");
 const getWeekOList = require("./queries/Week-OListQueries");
 const getTestomonials = require("./queries/TestomonialQueries");
+const getFAQs = require("./queries/FAQQueries");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -46,6 +47,19 @@ app.get('/StudentTestomonials', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+
+app.get('/FAQs', async (req, res) => {
+  try {
+    const FAQs = await getFAQs();
+    res.json(FAQs);
+  }
+  catch (err) {
+    console.error('Error while getting FAQs', err);
+    res.sendStatus(500);
+  }
+});
+
 
 module.exports = router;
 

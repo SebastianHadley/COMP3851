@@ -31,7 +31,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #000 !important;
+  background-color: #121212 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -57,7 +57,13 @@ img {
   width: 100%;
   height: auto;
 }
-
+.banner-image{
+  height: 330px;
+  background-image: url('./assets/img/banner-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 button {
   border: 0;
   background-color: transparent;
@@ -197,7 +203,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .first {
   padding: 0 0 50px 0;
   position: relative;
-  background-color: #000;
 }
 .first-bx {
   background: #89a7df;
@@ -240,7 +245,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left:20%;
   margin-right:20%;
   position: relative;
-  background-color: black;
 }
 .project h2 {
 	font-size: 45px;
@@ -392,53 +396,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 /******** Testimonial  CSS************/
-.test-bx{
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  margin-bottom: 10px;
-  width:3000px;
-  align-items: center;
-  height:200px;
+.test-wrapper{
+  padding-bottom: 60px;
 }
-.test-overall{
-  padding: 60px 0;
-  position: relative;
-  background-color: black;
-  align-content: center;
-  margin-left: 20%;
-  margin-right:20%;
-}
-.test-center{
-  align-items: center;
-}
-.test-prior{
-  color: #9983e9;
-  text-align: center;
-  text-decoration: solid;
-  font-weight: bold;
-  font-size: 70px;
-}
-.test-text{
-  text-align: center;
-  text-decoration: solid;
-  quotes: "'";
-  align-items: center;
-  color: #83e6e9;
-}
-.test-imgbx {
-  position: relative;
-  border-radius: 30px;
-  overflow: hidden;
-  margin-bottom: 45px;
-}
-.test-textimg{
-  text-align:center;
-  text-decoration: solid;
-  font-weight: bold;
-  font-size: 40px;
-  
-}
+
 
 /******New Edition ***********/
 
@@ -449,8 +410,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .carousel .slide {
-  background: #020202 !important;
-  color: black;
   height: 100%;
 }
 
@@ -579,7 +538,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-decoration: solid;
 }
 .test-all{
-  background-color: #000;
 }
 
 /********* FAQ CSS *****************/
@@ -589,6 +547,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .faq-block {
+  text-align: left;
   margin-left: 20%;
   margin-right: 20%;
 }
@@ -627,4 +586,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .testimonial-details{
   color: white;
   padding-top: 50px;
+}
+
+
+/* Faculty Page */
+.faculty-page-banner{
+    padding-top: 50px;
+    position: relative;
+    /* Enable positioning */
+    width: 100%;
+    /* Adjust to the desired width */
+    height: 350px;
+    /* Adjust to the desired height */
+    overflow: hidden;
+    /* Hide any overflowing content */
+    background-image: url(assets/img/FacultyBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.faculty-page-title-box{
+  left:15%;
+  text-align: left;
+  top: 30%;
+  position: absolute;
+  width: 250px;
+}
+.faculty-page-title h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.faculty-page-title p {
+  font-size: 16px;
+  line-height: 1.4;
 }

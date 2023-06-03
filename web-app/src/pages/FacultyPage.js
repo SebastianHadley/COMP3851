@@ -6,22 +6,21 @@ import { FacultyInfo } from '../components/FacultyInfo';
 import { Footer } from '../components/Footer';
 import {Testimonial} from "../components/Testimonial"
 import {FAQ} from "../components/FAQ"
+import { GetImage } from '../Helper';
 
-function Home({ onPageChange, onTestimonialsDataUpdate}) {
-    
-    const handleTestimonialsFormSubmit = (newData) => {
-        onTestimonialsDataUpdate(newData)
-        console.log(newData);
-        onPageChange('Testimonials')
-    };
+function FacultyPage({onPageChange}) {
+
     return (
         <div>
-            <Banner />
-            <FirstDay />
-            <Testimonial setStudent={handleTestimonialsFormSubmit}/>
-            <FAQ />
+            <div className='faculty-page-banner'>
+                <div className='faculty-page-title-box'>
+                    <h2>School Of Information and Physical Sciences</h2>
+                    <p></p>
+                </div>
+            </div>
+            <FacultyInfo />
         </div>
     );  
 }
 
-export {Home}
+export {FacultyPage}

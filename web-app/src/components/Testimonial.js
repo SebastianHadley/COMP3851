@@ -27,7 +27,7 @@ function Testimonial({setStudent})  {
   
   let testomonials = testomonialResponse;
     return (
-      <div className="App">
+      <div className="test-wrapper">
         <h1>Testimonials</h1>
         <Carousel
         showArrows={true}
@@ -46,7 +46,7 @@ function Testimonial({setStudent})  {
                 It's freeing to be able to catch up on customized news and not be
                 distracted by a social media element on the same site
               </p>
-              <button onClick={() => clickButton('boom')}>View More</button>
+              <button onClick={() => clickButton('Shirley')}>View More</button>
             </div>
           </div>
 
@@ -59,6 +59,7 @@ function Testimonial({setStudent})  {
                 The simple and intuitive design makes it easy for me use. I highly
                 recommend Fetch to my peers.
               </p>
+              <button onClick={() => clickButton('Daniel')}>View More</button>
             </div>
           </div>
 

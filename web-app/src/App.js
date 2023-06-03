@@ -7,21 +7,23 @@ import { createContext } from 'react';
 import { Home } from "./pages/Home"
 import { TestimonialDetails } from './pages/TestimonialDetails';
 import { useEffect } from 'react';
-const TestimonialsContext = createContext();
+import {FacultyPage} from './pages/FacultyPage'
+import { Footer } from './components/Footer';
+export const TestimonialsContext = createContext();
 
 function App() {
   const [page, setPage] = useState('Home');
   const [testimonialsData, setTestimonialsData] = useState([]);
 
   const handleTestimonialsDataUpdate = (newData) => {
+    console.log(newData)
     setTestimonialsData(newData);
+    console.log("check")
   };
 
     useEffect(() => {
-    if (page === 'Testimonials') {
       setTestimonialsData([]);
-    }
-  }, [page]);
+  }, []);
 
   const renderPage = () => {
     switch (page) {
@@ -31,8 +33,8 @@ function App() {
             onTestimonialsDataUpdate={handleTestimonialsDataUpdate} 
           />
         );
-      // case 'Faculty':
-      //   return <FacultyPage onPageChange={setPage} />;
+      case 'Faculty':
+        return <FacultyPage onPageChange={setPage} />;
       case 'Testimonials':
         return (
           <TestimonialsContext.Provider value={testimonialsData}>
@@ -45,8 +47,9 @@ function App() {
   }
   return (
     <div className="App">
-      <NavBar />
+      <NavBar onPageChange={setPage} />
       {renderPage()}
+      {/* <Footer /> */}
     </div>
   );
 }

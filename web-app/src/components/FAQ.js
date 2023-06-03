@@ -26,7 +26,7 @@ export const FAQ = () => {
     console.log(Faqs)
 
     const styles = {
-        bgColor: 'black',
+        bgColor: '#121212',
         titleTextColor: "blue",
         rowTitleColor: "white",
         rowContentColor: 'white',

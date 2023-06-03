@@ -4,7 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import noname  from "../assets/img/FacultyImages/Blank.png";
 import { useEffect, useState, setData } from 'react';
 
-export const Testimonial = () => {
+function Testimonial({setStudent})  {
+
   const [testomonialResponse, setTestomonials] = useState([]);
   useEffect(() => {
 
@@ -19,6 +20,10 @@ export const Testimonial = () => {
     }
     fetchTestmonials();
   }, []);
+
+  function clickButton(student){
+    setStudent(student)
+  }
   
   let testomonials = testomonialResponse;
     return (
@@ -41,6 +46,7 @@ export const Testimonial = () => {
                 It's freeing to be able to catch up on customized news and not be
                 distracted by a social media element on the same site
               </p>
+              <button onClick={() => clickButton('boom')}>View More</button>
             </div>
           </div>
 
@@ -71,3 +77,4 @@ export const Testimonial = () => {
       </div>
     );
   }
+export {Testimonial}

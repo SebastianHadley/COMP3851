@@ -3,8 +3,7 @@ import 'animate.css';
 
 export const Banner = () => {
   return (
-    <section >
-    <span className="tagline">Welcome to University of Newcastle.</span>
+    <section className="banner" >
     <div>
       <img src={bannerImg} alt="../assets/img/banner-bg.png"/>
     </div>

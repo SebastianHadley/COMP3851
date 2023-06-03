@@ -33,7 +33,8 @@ module.exports = async function getFaculties() {
                   staff.Title,
                   staff.Email,
                   staff.JobRole,
-                  staff.Subject
+                  staff.Subject,
+                  staff.FacultyLink
                 );
                 facultyGroup.FacultyMembers.push(facultyMember);
               });

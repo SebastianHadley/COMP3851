@@ -20,9 +20,8 @@ module.exports = async function getWeekOList() {
                     if(err){
                         reject(err)
                     }else{
-                        paragraphs = paragraphObj.map(para => new Paragraph(para.ParagraphTitle,para.ParagraphText,para.ImageID));
+                        paragraphs = paragraphObj.map(para => new Paragraph(para.ParagraphTitle,para.ParagraphText,para.ImageID,para.AdditionalText));
                         const returnObj = new Section(rows[0].SectionTitle,paragraphs)
-                        console.log(returnObj)
                         resolve(returnObj);
                     }
                 })

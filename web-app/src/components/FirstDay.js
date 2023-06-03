@@ -56,7 +56,7 @@ export const FirstDay = () => {
                                 <h5>{item.ParagraphText}</h5> 
                               </div>
                           ))}
-                        </Carousel>
+                          </Carousel>
                         ) : (
                           <p>Loading ... </p>
                         )}

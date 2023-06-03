@@ -5,11 +5,27 @@ import noname  from "../assets/img/FacultyImages/Blank.png";
 //import kelly from "../assets/img/TestimonialPhotos/Kelly.png";
 import brandon from "../assets/img/TestimonialPhotos/Brandon.png";
 import { StudentInfo } from "./StudentInfo";
-
+import { useEffect, useState, setData } from 'react';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Testimonial = () => {
+  const [testomonialResponse, setTestomonials] = useState([]);
+  useEffect(() => {
+
+    async function fetchTestmonials() {
+      try {
+        const response = await fetch("http://localhost:3001/StudentTestomonials");
+        const data = await response.json();        
+        setTestomonials(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchTestmonials();
+  }, []);
+  
+  let testomonials = testomonialResponse;
 
   const Head = [
     {

@@ -218,14 +218,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: 20%;
   bottom: 30%;
   text-align: left;
+  overflow: hidden;
   padding: 10px;
 }
 .banner-information-card h3{
-  font-size: 38px;
+  font-size: calc(1.5vh + 1.5vw);
 }
 
 .banner-information-card p {
-  font-size: 18px;
+  font-size: calc(0.9vh + 0.9vw);
   font-style: italic;
 }
 /************ First Days Css ************/
@@ -460,7 +461,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 }
 
 .myCarousel {
-  background: #fafafa;
+  background: #fafafa !important;
   margin-top: -6%;
   width: 54%;
   margin-left: auto;

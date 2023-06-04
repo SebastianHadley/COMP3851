@@ -29,7 +29,9 @@ export const FAQ = () => {
         bgColor: 'transparent',
         titleTextColor: "blue",
         rowTitleColor: "white",
+        rowTitleTextSize: '18px',
         rowContentColor: 'white',
+        rowContentTextSize: '12px',
         arrowColor: "white",
     };
 

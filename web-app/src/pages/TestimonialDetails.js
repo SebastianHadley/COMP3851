@@ -13,7 +13,7 @@ function TestimonialDetails() {
             <h2>{testimonialData.SectionTitle}</h2>
             <h3> {testimonialData.SectionSubTitle}</h3>
           </div>
-          <img src={GetJPG('TestimonialsBackground3')} className= "testimonial-details-img"></img>
+          <img src={GetJPG('TestimonialsBackground')} className= "testimonial-details-img"></img>
         </div>
         <div className='testimonial-questions-container'>
             {testimonialData.Paragraphs.map((paragraph, idx) => (

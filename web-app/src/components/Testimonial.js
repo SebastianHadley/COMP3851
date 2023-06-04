@@ -2,9 +2,32 @@ import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import noname  from "../assets/img/FacultyImages/Blank.png";
-export const Testimonial = () => {
+import { useEffect, useState, setData } from 'react';
+
+function Testimonial({setStudent})  {
+
+  const [testomonialResponse, setTestomonials] = useState([]);
+  useEffect(() => {
+
+    async function fetchTestmonials() {
+      try {
+        const response = await fetch("http://localhost:3001/StudentTestomonials");
+        const data = await response.json();        
+        setTestomonials(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchTestmonials();
+  }, []);
+
+  function clickButton(student){
+    setStudent(student)
+  }
+  
+  let testomonials = testomonialResponse;
     return (
-      <div className="App">
+      <div className="test-wrapper">
         <h1>Testimonials</h1>
         <Carousel
         showArrows={true}
@@ -23,6 +46,7 @@ export const Testimonial = () => {
                 It's freeing to be able to catch up on customized news and not be
                 distracted by a social media element on the same site
               </p>
+              <button onClick={() => clickButton('Shirley')}>View More</button>
             </div>
           </div>
 
@@ -35,6 +59,7 @@ export const Testimonial = () => {
                 The simple and intuitive design makes it easy for me use. I highly
                 recommend Fetch to my peers.
               </p>
+              <button onClick={() => clickButton('Daniel')}>View More</button>
             </div>
           </div>
 
@@ -53,3 +78,4 @@ export const Testimonial = () => {
       </div>
     );
   }
+export {Testimonial}

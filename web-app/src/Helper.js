@@ -10,3 +10,7 @@ export function getFacultyImage(ImageID){
 export function GetImage(ImageID){
     return require("./assets/img/"+ImageID+".png");
 }
+
+export function GetSVG(ImageID){
+    return require("./assets/img/"+ImageID+".svg");
+}

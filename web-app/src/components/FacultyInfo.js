@@ -47,8 +47,8 @@ export const FacultyInfo = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2 className="test-prior">School of Information and Physical Sciences</h2>
+              <div >
+                <h2 className="test-prior">Faculty Information</h2>
                 <p>Our People</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
@@ -59,7 +59,7 @@ export const FacultyInfo = () => {
                       <Nav.Link eventKey="second">Program Convenor</Nav.Link>
                     </Nav.Item>
                   </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                  <Tab.Content>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {

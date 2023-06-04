@@ -2,8 +2,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Banner} from "../components/Banner";
 import {FirstDay} from "../components/FirstDay";
-import { FacultyInfo } from '../components/FacultyInfo';
-import { Footer } from '../components/Footer';
 import {Testimonial} from "../components/Testimonial"
 import {FAQ} from "../components/FAQ"
 

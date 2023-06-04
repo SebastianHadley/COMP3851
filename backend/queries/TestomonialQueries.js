@@ -42,7 +42,16 @@ module.exports = async function getTestomonials() {
               });
 
               paragraphs = paragraphObj.map(para => new Paragraph(para.ParagraphTitle, para.ParagraphText, para.ImageID, para.AdditionalText));
-              let subSection = new Section(sub.SectionTitle, paragraphs);
+              let sectionExtra;
+              const updatedParagraphs = paragraphs.map((para) => {
+                if (para.ParagraphTitle === 'Blurb') {
+                  sectionExtra = para.ParagraphText;
+                  return null; // Set the paragraph to null
+                }
+                return para; // Keep the paragraph as it is
+              }).filter(Boolean); 
+              paragraphs.slice(updatedParagraphs);
+              let subSection = new Section(sub.SectionTitle, updatedParagraphs , sub.ImageID, null, sub.SectionSubTitle, sectionExtra);
               subSections.push(subSection);
             }
             const Testimonials = new Section(rows.SectionTitle, null, null, subSections);

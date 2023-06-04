@@ -26,10 +26,12 @@ export const FAQ = () => {
     console.log(Faqs)
 
     const styles = {
-        bgColor: '#121212',
+        bgColor: 'transparent',
         titleTextColor: "blue",
         rowTitleColor: "white",
+        rowTitleTextSize: '18px',
         rowContentColor: 'white',
+        rowContentTextSize: '12px',
         arrowColor: "white",
     };
 
@@ -42,7 +44,7 @@ export const FAQ = () => {
 
     return (
         <div className="faq-block">
-            <h1 className="faq-heading">{Faqs.Title}</h1>
+            <h1 className="faq-heading">{Faqs.Title}</h1><hr></hr>
             <div className="faq-container">
                 <Faq 
                     data={Faqs.data}

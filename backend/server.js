@@ -7,6 +7,7 @@ const getFaculties = require("./queries/FacultyQueries");
 const getWeekOList = require("./queries/Week-OListQueries");
 const getTestomonials = require("./queries/TestomonialQueries");
 const getFAQs = require("./queries/FAQQueries");
+const getBannerText = require("./queries/BannerQueries");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -52,10 +53,23 @@ app.get('/StudentTestomonials', async (req, res) => {
 app.get('/FAQs', async (req, res) => {
   try {
     const FAQs = await getFAQs();
+
     res.json(FAQs);
   }
   catch (err) {
     console.error('Error while getting FAQs', err);
+    res.sendStatus(500);
+  }
+});
+
+app.get('/BannerInformation', async (req, res) => {
+  try {
+    const bannerText = await getBannerText();
+    console.log(bannerText)
+    res.json(bannerText);
+  }
+  catch (err) {
+    console.error('Error while getting Banner Text', err);
     res.sendStatus(500);
   }
 });

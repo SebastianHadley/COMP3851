@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import noname  from "../assets/img/FacultyImages/Blank.png";
-import { useEffect, useState, setData } from 'react';
-import { GetImage, getStudentImage } from "../Helper";
+import { useEffect, useState } from 'react';
+import { getStudentImage } from "../Helper";
 function Testimonial({setStudent})  {
 
   const [testomonialResponse, setTestomonials] = useState([]);

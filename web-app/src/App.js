@@ -49,7 +49,7 @@ function App() {
     <div className="App">
       <NavBar onPageChange={setPage} />
       {renderPage()}
-      {/* <Footer /> */}
+      {<Footer />}
     </div>
   );
 }

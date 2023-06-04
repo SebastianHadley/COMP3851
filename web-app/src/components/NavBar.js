@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
+import { GetSVG } from "../Helper";
 import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-export const NavBar = () => {
+function NavBar({onPageChange}){
 
-  const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,31 +23,29 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [])
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
+  function handleClick(Page){
+    onPageChange(Page);
   }
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+      <Navbar className="nav-styling">
+          <Navbar.Brand>
+            <button onClick={() => handleClick('Home')}>
+              <img src={ GetSVG('logosmall')} className= "nav-image" />
+            </button>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Contact Us</Nav.Link>
+              <Nav.Link onClick={() => handleClick('Faculty')}>Faculty</Nav.Link>
+              <Nav.Link href='https://www.newcastle.edu.au/our-uni/campuses-and-locations/maps'>Map</Nav.Link>
+              <Nav.Link onClick={() => handleClick('Home')}>Home</Nav.Link>
             </Nav>
             <span className="navbar-text">
             </span>
           </Navbar.Collapse>
-        </Container>
       </Navbar>
     </Router>
   )
 }
+export {NavBar}

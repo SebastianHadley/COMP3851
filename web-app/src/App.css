@@ -32,6 +32,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
+  background-image: linear-gradient(to left top, rgba(45, 49, 56, 1), rgba(45, 49, 56, 0.96), rgba(45, 49, 56, 0.92), rgba(45, 49, 56, 0.88), rgba(45, 49, 56, 0.84), rgba(45, 49, 56, 0.8));
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -205,11 +206,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .first-bx {
-  background: #89a7df;
+  background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
   border-radius: 64px;
   text-align: center;
   padding: 25px 30px;
-  margin-top: -60px;
+  margin-top: 30px;
 }
 .first h2 {
 	font-size: 45px;
@@ -300,7 +301,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
     position: absolute;
     width: 0%;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #2fbd4e 111.58%);
+    background: linear-gradient(90.21deg, #129DE9 -5.91%, #0e7dbaeb 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -352,7 +353,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 
 .proj-imgbx::before {
   content: "";
-  background-color: #9983e9 !important;
+  background-color: rgba(14, 125, 186, 0.92) !important;
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -595,10 +596,64 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 
 /* Testimonial Details */
 
-.testimonial-details{
-  color: white;
-  padding-top: 50px;
+
+.testimonial-details-container{
+    padding-top: 50px;
+    min-height: 100vh;
 }
+.testimonial-questions-container{
+    color: white;
+    width: 60%;
+    justify-content: center;
+    background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    position: absolute;
+    left:20%
+  }
+
+  .testimonial-details-heading{
+      position:absolute;
+      min-width: 35%;
+      overflow: hidden;
+      bottom: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-image: linear-gradient(to top, rgba(91, 98, 112, 1), rgba(91, 98, 112, 0.98), rgba(91, 98, 112, 0.96), rgba(91, 98, 112, 0.94), rgba(91, 98, 112, 0.92), rgba(91, 98, 112, 0.91))
+  }
+  .testimonial-details-heading h2{
+    font-size: 4em;
+  }
+  .testimonial-details-heading h3 {
+    font-size: 2.5em;
+  }
+  .testimonial-details-image-box{
+    margin-top: 20px;
+    width: 60%;
+    position:relative;
+    left: 20%;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    overflow: hidden;
+  }
+
+.testimonial-details-content {
+  text-align: left;
+  padding: 10px 10px 0px 10px;
+}
+
+.testimonial-question {
+  font-size: 11px;
+  color: #fdfdff;
+  font-weight: 800;
+}
+
+.testimonial-answer {
+  font-size: 8px;
+  font-weight: 200;
+}
+
 
 
 /* Faculty Page */

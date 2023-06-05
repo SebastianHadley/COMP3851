@@ -807,19 +807,45 @@ filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rota
   display: inline-block;
   width: 50%;
   height: 100%;
+  padding-bottom: 10px;
 }
 .information-common{
   height: 100%;
   border-radius: 15px;
+  padding:30px;
 }
 .information-block-one{
-  background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-
-.information-block-two {
-  background-image: linear-gradient(to left top, rgb(13, 44, 65, 1), rgb(13, 44, 64, 0.98), rgb(13, 44, 63, 0.96), rgb(13, 44, 62, 0.95), rgb(13, 44, 61, 0.94), rgb(13, 44, 60, 0.92));
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
+.info-img{
+  width: 250px;
+  height: auto;
+  float: right;
+  border-radius: 24px;
 }
+.info-text .info-text1{
+  position:relative;
+  border-radius: 10px;
+  float: left;
+  overflow: hidden;
+}
+.info-text .info-text1 h3 {
+  font-size: calc(1.5vh + 1.5vw);
+  font-style: Oswald;
+  font-weight: bold;
+}
+
+.info-text .info-text1 p {
+  font-size: calc(0.9vh + 0.9vw);
+  font-style: Oswald;
+}
+.info-img1{
+  width: 250px;
+  height: auto;
+  float: left;
+  border-radius: 24px;
+
+}
+
+

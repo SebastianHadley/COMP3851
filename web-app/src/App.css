@@ -212,14 +212,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .banner-information-card{
   position: absolute;
-  background-image: linear-gradient(to left top, rgb(13, 44, 65), rgb(13, 44, 64), rgb(13, 44, 63), rgb(13, 44, 62), rgb(13, 44, 61), rgb(13, 44, 60));  width: 30vw;
+  width: 30vw;
   height: 20vh;
+  background-image: linear-gradient(to left top, rgb(13, 44, 65, 1), rgb(13, 44, 64, 0.98), rgb(13, 44, 63, 0.96), rgb(13, 44, 62, 0.95), rgb(13, 44, 61, 0.94), rgb(13, 44, 60, 0.92));
   border-radius: 10px;
   left: 20%;
   bottom: 26.5%;
   text-align: left;
   overflow: hidden;
-  padding: 50px;
+  padding: 10px;
 }
 .banner-information-card h3{
   font-size: calc(1.5vh + 1.5vw);
@@ -620,6 +621,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 }
 .social-icon {
   display: inline-block;
+  padding-bottom: 10px;
   margin-left: 14px;
 }
 .social-icon a {
@@ -790,4 +792,34 @@ filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rota
 .faculty-page-title p {
   font-size: 16px;
   line-height: 1.4;
+}
+
+/* Information Block */
+
+
+.information-section{
+  height:500px;
+  padding:30px 15%;
+  border-radius: 10px;
+}
+
+.information-block{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.information-common{
+  height: 100%;
+  border-radius: 15px;
+}
+.information-block-one{
+  background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.information-block-two {
+  background-image: linear-gradient(to left top, rgb(13, 44, 65, 1), rgb(13, 44, 64, 0.98), rgb(13, 44, 63, 0.96), rgb(13, 44, 62, 0.95), rgb(13, 44, 61, 0.94), rgb(13, 44, 60, 0.92));
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
 }

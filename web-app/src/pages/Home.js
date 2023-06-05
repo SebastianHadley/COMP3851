@@ -4,6 +4,7 @@ import {Banner} from "../components/Banner";
 import {FirstDay} from "../components/FirstDay";
 import {Testimonial} from "../components/Testimonial"
 import {FAQ} from "../components/FAQ"
+import { InformationSection } from '../components/InformationSection';
 
 function Home({ onPageChange, onTestimonialsDataUpdate}) {
     
@@ -15,6 +16,7 @@ function Home({ onPageChange, onTestimonialsDataUpdate}) {
     return (
         <div>
             <Banner />
+            <InformationSection/>
             <FirstDay />
             <Testimonial setStudent={handleTestimonialsFormSubmit}/>
             <FAQ />

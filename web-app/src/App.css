@@ -32,8 +32,9 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
+  background-image: linear-gradient(to left top, rgba(45, 49, 56, 1), rgba(45, 49, 56, 0.96), rgba(45, 49, 56, 0.92), rgba(45, 49, 56, 0.88), rgba(45, 49, 56, 0.84), rgba(45, 49, 56, 0.8));
   color: #fff !important;
-  font-family: 'Centra', sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,13 +58,9 @@ img {
   width: 100%;
   height: auto;
 }
-.banner-image{
-  height: 330px;
-  background-image: url('./assets/img/banner-bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
+
+
+
 button {
   border: 0;
   background-color: transparent;
@@ -197,19 +194,54 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Banner Css ************/
-.banner {}
+.banner {
+  position: relative;
+  padding-top: 50px;
+}
 
+.banner-image{
+  position: relative;
+  height: 100%;
+  height: 70vh;
+  width: 100%;
+  background-image: url('./assets/img/banner-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-information-card{
+  position: absolute;
+  background-image: linear-gradient(to left top, rgb(13, 44, 65), rgb(13, 44, 64), rgb(13, 44, 63), rgb(13, 44, 62), rgb(13, 44, 61), rgb(13, 44, 60));  width: 30vw;
+  height: 20vh;
+  border-radius: 10px;
+  left: 20%;
+  bottom: 26.5%;
+  text-align: left;
+  overflow: hidden;
+  padding: 50px;
+}
+.banner-information-card h3{
+  font-size: calc(1.5vh + 1.5vw);
+  font-style: Oswald;
+  font-weight: bold;
+}
+
+.banner-information-card p {
+  font-size: calc(0.9vh + 0.9vw);
+  font-style: Oswald;
+}
 /************ First Days Css ************/
 .first {
   padding: 0 0 50px 0;
   position: relative;
 }
 .first-bx {
-  background: #89a7df;
+  background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
   border-radius: 64px;
   text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
+  padding: 25px 30px;
+  margin-top: 30px;
 }
 .first h2 {
 	font-size: 45px;
@@ -231,6 +263,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 50%;
   margin: 0 auto 15px auto;
 }
+.item img:hover {
+  transform: scale(1.25);
+}
+
 .background-image-left {
   top: 28%;
   position: absolute;
@@ -239,6 +275,35 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
+  left:0px
+}
+button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+  right:0px
+}
+
+.collap {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collap:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
 /************ Projects Css ************/
 .project {
   padding: 60px 0;
@@ -292,7 +357,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0%;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #2fbd4e 111.58%);
+    background: linear-gradient(90.21deg, #129DE9 -5.91%, #0e7dbaeb 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -344,21 +409,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .proj-imgbx::before {
   content: "";
-  background-color: #9983e9 !important;
+  background-color: rgba(14, 125, 186, 0.92) !important;
   opacity: 0.85;
   position: absolute;
   width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
+
 }
 
 .proj-imgbx:hover::before {
   height: 100%;
+
+}
+.proj-imgbx:hover {
+  transform: scale(1.05);
+
 }
 .proj-img-content{
     width: 100%;
     height: 100%;
     object-fit: fill;
+
 }
 
 .proj-txtx {
@@ -423,7 +495,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .myCarousel {
-  background: #fafafa;
+  background: #fafafa !important;
   margin-top: -6%;
   width: 54%;
   margin-left: auto;
@@ -475,6 +547,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #000000;
   font-size: 26px;
   font-family: monospace;
+  padding-right: 5px;
   font-weight: 100;
 }
 
@@ -485,6 +558,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-family: monospace;
   font-weight: 100;
   line-height: 0;
+  padding-left: 5px;
 }
 
 .carousel .control-dots .dot {
@@ -534,14 +608,52 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 /****************** Footer Css *************/
-
+.Footer-center{
+ text-align: center;
+ margin-top: 50px;
+}
 .test-left {
   text-align:left;
   margin-left: 155px;
   color: black;
   text-decoration: solid;
 }
-.test-all{
+.social-icon {
+  display: inline-block;
+  margin-left: 14px;
+}
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+transition: 0.3s ease-in-out;
+}
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+.social-icon a img {
+width: 40%;
+z-index: 1;
+transition: 0.3s ease-in-out;
+}
+.social-icon a:hover img {
+filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 
 /********* FAQ CSS *****************/
@@ -587,10 +699,64 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* Testimonial Details */
 
-.testimonial-details{
-  color: white;
-  padding-top: 50px;
+
+.testimonial-details-container{
+    padding-top: 50px;
+    min-height: 100vh;
 }
+.testimonial-questions-container{
+    color: white;
+    width: 60%;
+    justify-content: center;
+    background-image: linear-gradient(to left top, rgba(14, 125, 186, 1), rgba(14, 125, 186, 0.96), rgba(14, 125, 186, 0.92), rgba(14, 125, 186, 0.88), rgba(14, 125, 186, 0.84), rgba(14, 125, 186, 0.8));
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    position: absolute;
+    left:20%
+  }
+
+  .testimonial-details-heading{
+      position:absolute;
+      min-width: 35%;
+      overflow: hidden;
+      bottom: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-image: linear-gradient(to top, rgba(91, 98, 112, 1), rgba(91, 98, 112, 0.98), rgba(91, 98, 112, 0.96), rgba(91, 98, 112, 0.94), rgba(91, 98, 112, 0.92), rgba(91, 98, 112, 0.91))
+  }
+  .testimonial-details-heading h2{
+    font-size: 4em;
+  }
+  .testimonial-details-heading h3 {
+    font-size: 2.5em;
+  }
+  .testimonial-details-image-box{
+    margin-top: 20px;
+    width: 60%;
+    position:relative;
+    left: 20%;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    overflow: hidden;
+  }
+
+.testimonial-details-content {
+  text-align: left;
+  padding: 10px 10px 0px 10px;
+}
+
+.testimonial-question {
+  font-size: 13px;
+  color: #fdfdff;
+  font-weight: 800;
+}
+
+.testimonial-answer {
+  font-size: 11px;
+  font-weight: 200;
+}
+
 
 
 /* Faculty Page */

@@ -1,17 +1,32 @@
 
-import linkedin from "../assets/img/nav-icon1.svg";
-import facebook from "../assets/img/nav-icon2.svg";
-import instagram from "../assets/img/nav-icon3.svg";
+import { GetSVG } from "../Helper";
+import { useEffect, useState, setData } from 'react';
 
 export const Footer = () => {
+
+  const [footerResponse, setFooter] = useState([]);
+
+  useEffect(() => {
+    async function fetchFooter() {
+      try {
+        const response = await fetch("http://localhost:3001/Footer");
+        const data = await response.json();  
+        setFooter(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchFooter();
+  }, []);
   return (
     <footer className="Footer-center">
-            <div className="social-icon">
-              <a href="https://au.linkedin.com/school/university-of-newcastle/"><img src={linkedin} alt="Icon" /></a>
-              <a href="https://www.facebook.com/TheUniversityofNewcastleAustralia/"><img src={facebook} alt="Icon" /></a>
-              <a href="https://www.instagram.com/uni_newcastle/"><img src={instagram} alt="Icon" /></a>
-            </div>
-            <p>Copyright 2022. All Rights Reserved by University of Newcastle</p>
+            { footerResponse.Paragraphs ? footerResponse.Paragraphs.map((item, index) => (
+              <div key={index} className="social-icon">
+                <a href={item.ParagraphText}><img src={GetSVG(item.ImageID)} /></a>
+              </div>
+              )) :  
+              <div>loading</div>}
+            <p>{footerResponse.SectionAdditionalText}</p>
     </footer>
   )
 }

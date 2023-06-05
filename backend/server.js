@@ -8,7 +8,7 @@ const getWeekOList = require("./queries/Week-OListQueries");
 const getTestomonials = require("./queries/TestomonialQueries");
 const getFAQs = require("./queries/FAQQueries");
 const getBannerText = require("./queries/BannerQueries");
-
+const getFooter = require("./queries/FooterQueries")
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -65,7 +65,6 @@ app.get('/FAQs', async (req, res) => {
 app.get('/BannerInformation', async (req, res) => {
   try {
     const bannerText = await getBannerText();
-    console.log(bannerText)
     res.json(bannerText);
   }
   catch (err) {
@@ -74,6 +73,18 @@ app.get('/BannerInformation', async (req, res) => {
   }
 });
 
+
+app.get('/Footer', async (req, res) => {
+  try {
+    console.log("check")
+    const bannerText = await getFooter();
+    res.json(bannerText);
+  }
+  catch (err) {
+    console.error('Error while getting Footer Text', err);
+    res.sendStatus(500);
+  }
+});
 
 module.exports = router;
 

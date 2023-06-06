@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import { getStudentImage } from "../Helper";
 function Testimonial({setStudent})  {
 
-  const [testomonialResponse, setTestomonials] = useState([]);
+  const [testimonialResponse, settestimonials] = useState([]);
   useEffect(() => {
     async function fetchTestmonials() {
       try {
-        const response = await fetch("http://localhost:3001/StudentTestomonials");
+        const response = await fetch("http://localhost:3001/Studenttestimonials");
         const data = await response.json();  
-        setTestomonials(data);
+        settestimonials(data);
       } catch (error) {
         console.log(error);
       }
@@ -22,11 +22,11 @@ function Testimonial({setStudent})  {
   function clickButton(student){
     setStudent(student)
   }
-  console.log(testomonialResponse)
+  console.log(testimonialResponse)
 
     return (
       <div className="test-wrapper">
-        <h1>Testimonials</h1>
+        <h1>{testimonialResponse.SectionTitle}</h1>
         <Carousel
         showArrows={true}
         infiniteLoop={true}
@@ -35,7 +35,7 @@ function Testimonial({setStudent})  {
         autoPlay={false}
         interval={6100}
         >
-          {testomonialResponse.SubSections ? ( testomonialResponse.SubSections.map((student, index) => (
+          {testimonialResponse.SubSections ? ( testimonialResponse.SubSections.map((student, index) => (
             <div key={index}>
               <img src={getStudentImage(student.ImageID)} />
               <div className="myCarousel">
@@ -44,7 +44,8 @@ function Testimonial({setStudent})  {
                 <p>
                     {student.SectionAdditionalText}
                 </p>
-                <button onClick={() => clickButton(student)}>View More</button>
+                <br/>
+                <div className="testimonial-button"><button onClick={() => clickButton(student)}>{testimonialResponse.SectionSubTitle}</button></div>
             </div>
           </div>
           ))) : 

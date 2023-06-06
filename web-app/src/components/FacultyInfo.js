@@ -49,14 +49,13 @@ export const FacultyInfo = () => {
               {({ isVisible }) =>
               <div >
                 <h2 className="test-prior">Faculty Information</h2>
-                <p>Our People</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Head Staff</Nav.Link>
+                      <Nav.Link eventKey="first">{Head.length > 0 ? facultyResponse[0].FacultyName : "Head Staff"}</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Program Convenor</Nav.Link>
+                      <Nav.Link eventKey="second">{program.length > 0 ? facultyResponse[1].FacultyName : "Program Convenors"}</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content>

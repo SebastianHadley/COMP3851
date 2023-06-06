@@ -8,7 +8,8 @@ const getWeekOList = require("./queries/Week-OListQueries");
 const getTestomonials = require("./queries/TestomonialQueries");
 const getFAQs = require("./queries/FAQQueries");
 const getBannerText = require("./queries/BannerQueries");
-
+const getNavBar = require("./queries/NavbarQueries")
+const getFooter = require("./queries/FooterQueries")
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -38,7 +39,7 @@ app.get('/Week-O', async (req, res) => {
   }
 });
 
-app.get('/StudentTestomonials', async (req, res) => {
+app.get('/StudentTestimonials', async (req, res) => {
   try {
     const Testomonials = await getTestomonials();
     res.json(Testomonials);
@@ -65,7 +66,6 @@ app.get('/FAQs', async (req, res) => {
 app.get('/BannerInformation', async (req, res) => {
   try {
     const bannerText = await getBannerText();
-    console.log(bannerText)
     res.json(bannerText);
   }
   catch (err) {
@@ -74,6 +74,29 @@ app.get('/BannerInformation', async (req, res) => {
   }
 });
 
+
+app.get('/Footer', async (req, res) => {
+  try {
+    const bannerText = await getFooter();
+    res.json(bannerText);
+  }
+  catch (err) {
+    console.error('Error while getting Footer Text', err);
+    res.sendStatus(500);
+  }
+});
+
+
+app.get('/NavBar', async (req, res) => {
+  try {
+    const bannerText = await getNavBar();
+    res.json(bannerText);
+  }
+  catch (err) {
+    console.error('Error while getting Nav Bar', err);
+    res.sendStatus(500);
+  }
+});
 
 module.exports = router;
 

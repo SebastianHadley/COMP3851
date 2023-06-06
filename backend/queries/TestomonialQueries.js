@@ -54,7 +54,7 @@ module.exports = async function getTestomonials() {
               let subSection = new Section(sub.SectionTitle, updatedParagraphs , sub.ImageID, null, sub.SectionSubTitle, sectionExtra);
               subSections.push(subSection);
             }
-            const Testimonials = new Section(rows.SectionTitle, null, null, subSections);
+            const Testimonials = new Section(rows[0].SectionTitle, null, null, subSections,rows[0].SectionSubTitle);
             resolve(Testimonials);
           } catch (error) {
             reject(error);

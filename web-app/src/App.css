@@ -351,6 +351,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
   transition: 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
+  overflow: hidden;
 }
 
 .project .nav.nav-pills .nav-link::before {

@@ -16,8 +16,8 @@ function Home({ onPageChange, onTestimonialsDataUpdate}) {
     return (
         <div>
             <Banner />
-            <InformationSection/>
             <FirstDay />
+            <InformationSection/>
             <Testimonial setStudent={handleTestimonialsFormSubmit}/>
             <FAQ />
         </div>

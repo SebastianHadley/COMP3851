@@ -7,7 +7,7 @@ export const Banner = () => {
   const [bannerResponse, setBanner] = useState([]);
 
   useEffect(() => {
-    async function fetchTestmonials() {
+    async function fetchBanner() {
       try {
         const response = await fetch("http://localhost:3001/BannerInformation");
         const data = await response.json();  
@@ -16,7 +16,7 @@ export const Banner = () => {
         console.log(error);
       }
     }
-    fetchTestmonials();
+    fetchBanner();
   }, []);
 
   return (

@@ -7,21 +7,19 @@ import {
 
 function NavBar({onPageChange}){
 
-  const [scrolled, setScrolled] = useState(false);
-
+  const [navResponse, setNav] = useState([]);
   useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+    async function fetchNav() {
+      try {
+        const response = await fetch("http://localhost:3001/NavBar");
+        const data = await response.json();        
+        setNav(data);
+      } catch (error) {
+        console.log(error);
       }
     }
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+    fetchNav();
+  }, []);
 
   function handleClick(Page){
     onPageChange(Page);
@@ -32,14 +30,20 @@ function NavBar({onPageChange}){
       <Navbar className="nav-styling">
           <Navbar.Brand>
             <button onClick={() => handleClick('Home')}>
-              <img src={ GetSVG('logosmall')} className= "nav-image" />
+              { navResponse.SectionAdditionalText ? (<img src={ GetSVG(navResponse.SectionAdditionalText)} className= "nav-image" />) :
+              <div>loading</div>}
             </button>
           </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link onClick={() => handleClick('Faculty')}>Faculty</Nav.Link>
-              <Nav.Link href='https://www.newcastle.edu.au/our-uni/campuses-and-locations/maps'>Map</Nav.Link>
-              <Nav.Link onClick={() => handleClick('Home')}>Home</Nav.Link>
+               { navResponse.Paragraphs ? navResponse.Paragraphs.map((item, index) => (
+              <div key={index}>
+                {item.AdditionalText ? (
+                <Nav.Link href={item.AdditionalText}> {item.ParagraphText}</Nav.Link>) : 
+                <Nav.Link onClick={() => handleClick(item.ParagraphText)}>{item.ParagraphText}</Nav.Link>}
+              </div>
+              )) :  
+              <div>loading</div>}
             </Nav>
             <span className="navbar-text">
             </span>

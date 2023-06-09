@@ -34,7 +34,7 @@ function NavBar({onPageChange}){
               <div>loading</div>}
             </button>
           </Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse className="navbar-content" id="basic-navbar-nav">
             <Nav className="ms-auto">
                { navResponse.Paragraphs ? navResponse.Paragraphs.map((item, index) => (
               <div key={index}>

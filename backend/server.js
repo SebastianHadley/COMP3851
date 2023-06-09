@@ -10,6 +10,8 @@ const getFAQs = require("./queries/FAQQueries");
 const getBannerText = require("./queries/BannerQueries");
 const getNavBar = require("./queries/NavbarQueries")
 const getFooter = require("./queries/FooterQueries")
+const getGeneralInformation = require("./queries/GeneralInformationQueries")
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -98,5 +100,15 @@ app.get('/NavBar', async (req, res) => {
   }
 });
 
+app.get('/GeneralInformation', async (req, res) => {
+  try {
+    const generalInfo = await getGeneralInformation();
+    res.json(generalInfo);
+  }
+  catch (err) {
+    console.error('Error while getting GeneralInformation', err);
+    res.sendStatus(500);
+  }
+});
 module.exports = router;
 

@@ -6,7 +6,7 @@ import { GetImage, GetJPG } from '../Helper';
 function TestimonialDetails() {
     const testimonialData = useContext(TestimonialsContext)
   return (
-    <section >
+    <div>
       <div className='testimonial-details-container'>
         <div className='testimonial-details-image-box'>
           <div className='testimonial-details-heading'>
@@ -25,7 +25,7 @@ function TestimonialDetails() {
             ))}
           </div>
         </div>
-    </section>
+    </div>  
   );
 }
 

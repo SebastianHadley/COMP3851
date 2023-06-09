@@ -113,6 +113,9 @@ span.navbar-text {
     align-items: center;
 }
 
+.navbar-nav{
+  font-size: 14px;
+}
 .navbar-text button {
   font-weight: 700;
   color: #fff;
@@ -296,7 +299,7 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 }
 
 .active, .collap:hover {
-  background-color: #555;
+  /* background-color: #555; */
 }
 
 .content {
@@ -715,8 +718,8 @@ filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rota
     color: #FFFFFF;
     border-radius: 10px;
     border-top-left-radius: 0px;
-    position: absolute;
-    left:20%
+    position: relative;
+    margin-left:20%
   }
 
   .testimonial-details-heading{

@@ -480,6 +480,9 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
 .test-wrapper{
   padding-bottom: 60px;
 }
+.test-wrapper h1 {
+  font-size: calc(1.5vh + 1.5vw);
+}
 
 
 /******New Edition ***********/

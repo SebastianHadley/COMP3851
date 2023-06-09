@@ -6,7 +6,7 @@ module.exports = async function getTestomonials() {
   return new Promise((resolve, reject) => {
     db.serialize(() => {
       // Execute the two queries in parallel
-      const getSection = 'SELECT * FROM Section WHERE SectionTitle = "Student Testomonials"';
+      const getSection = 'SELECT * FROM Section WHERE SectionTitle = "Student Testimonials"';
       let getSubSections = 'SELECT * FROM Section WHERE ParentSection =';
       let subSections = [];
       db.all(getSection, [], async (err, rows) => {

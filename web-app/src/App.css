@@ -834,14 +834,14 @@ filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rota
   float: left;
   overflow: hidden;
 }
-.info-text .info-text1 h3 {
-  font-size: calc(1.5vh + 1.5vw);
+.information-common h3 {
+  font-size: calc(1.2vh + 1.2vw);
   font-style: Oswald;
   font-weight: bold;
 }
 
-.info-text .info-text1 p {
-  font-size: calc(0.9vh + 0.9vw);
+.information-common {
+  font-size: calc(0.5vh + 0.5vw);
   font-style: Oswald;
 }
 .info-img1{

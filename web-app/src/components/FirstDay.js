@@ -52,7 +52,7 @@ export const FirstDay = () => {
                           <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme first-slider">
                             {OWeek.Paragraphs.map((item, index) => (
                               <div key={index} className="item">
-                                <a href={item.ParagraphTitle} target="_blank" style={{ all: 'unset' }}>
+                                <a href={item.AdditionalText} target="_blank" style={{ all: 'unset' }}>
                                   <img src={GetImage(item.ImageID)} />
                                   <h5>{item.ParagraphText}</h5> 
                                 </a>
